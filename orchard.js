@@ -87,7 +87,7 @@ let totalAcres = (sumF+sumG+sumP)
 
 // CODE HERE
 
-let averageDailyAcres = (totalAcres/3)
+let averageDailyAcres = (totalAcres/7)
 console.log(averageDailyAcres)
 
 
@@ -125,6 +125,13 @@ let acresLeft = 174
 let days = 0
 
 // CODE HERE
+
+while(acresLeft > 0 ){
+    days++
+    acresLeft -= averageDailyAcres
+}
+console.log(days)
+
 // let x = days + 21
 // while(acresLeft>1){
 //     (acresLeft - 21)
@@ -156,14 +163,24 @@ let days = 0
 */
 
 // CODE HERE
-let fujiArr =[]
-let galaArr ={}
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+let fujiTons = []
+let galaTons = []
+let pinkTons = []
 
-
-
+for(let i = 0; i < fujiAcres.length; i++){
+    let tonConversion = fujiAcres[i] * 6.5
+    fujiTons.push(tonConversion)
+}
+for(let i = 0; i < galaAcres.length; i++){
+    let tonConversion = galaAcres[i] * 6.5
+    galaTons.push(tonConversion)
+}for(let i = 0; i < pinkAcres.length; i++){
+    let tonConversion = pinkAcres[i] * 6.5
+    pinkTons.push(tonConversion)
+}
+console.log(fujiTons)
+console.log(galaTons)
+console.log(pinkTons)
 
 
 
@@ -185,10 +202,23 @@ let galaArr ={}
 
 // CODE HERE 
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
+for(let i = 0; i < fujiTons.length; i++){
+    fujiPounds += fujiTons[i] * 2000
+}
+    console.log(fujiPounds)
 
+for(let i = 0; i < galaTons.length; i++){
+        galaPounds += galaTons[i] * 2000
+    }
+        console.log(galaPounds)
+
+for(let i = 0; i < pinkTons.length; i++){
+            pinkPounds += pinkTons[i] * 2000
+        }
+            console.log(pinkPounds)
 
 
 
@@ -212,12 +242,13 @@ let galaArr ={}
 
 // CODE HERE
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
 
-
-
+console.log(fujiProfit)
+console.log(galaProfit)
+console.log(pinkProfit)
 
 
 
@@ -232,3 +263,5 @@ let galaArr ={}
 */
 
 // CODE HERE
+let totalProfit = (fujiProfit + galaProfit + pinkProfit)
+console.log(totalProfit)
